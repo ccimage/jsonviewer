@@ -25,3 +25,4 @@ Null
 
 
 ## Release Notes
+JSONViewer is open source software under the MIT licence.
