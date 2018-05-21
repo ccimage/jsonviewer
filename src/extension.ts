@@ -2,7 +2,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import { ExceptionInfo } from '_debugger';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -197,7 +196,7 @@ export function jsonToHTML(json: any, uri: string) {
   
     return `<span class="collapser"></span>{<ul class="obj collapsible">${output}</ul>}`;
   }
-  
+  /*
   // Clean up a JSON parsing error message
   function massageError(error: Error): {
     message: string;
@@ -243,6 +242,7 @@ export function jsonToHTML(json: any, uri: string) {
   
     return output;
   }
+  */
   
   // Wrap the HTML fragment in a full document. Used by jsonToHTML and errorPage.
   function toHTML(content: string, title: string) {
