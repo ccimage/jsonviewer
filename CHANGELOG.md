@@ -10,5 +10,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
 - All of the codes are from [jsonview](https://github.com/bhollis/jsonview) excepted the in18 and error message
 
-### [1.0.1] - 2018-05-21
-- changed README and project setting
+## [1.0.2] - 2018-05-21
+- fix some mistake on the document

@@ -2,7 +2,7 @@
     "name": "jsonviewer",
     "displayName": "JSON Viewer",
     "description": "Preview JSON as tree view on VSCode",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "ccimage",
     "repository":{
         "type": "git",

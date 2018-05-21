@@ -1,6 +1,4 @@
-# mrchejsonviewer README
-
-Project home page [http://www.github.com/mrche/jsonviewer](http://www.github.com/mrche/jsonviewer)
+Project home page [http://www.github.com/ccimage/jsonviewer](http://www.github.com/ccimage/jsonviewer)
 Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
 
 ## install
@@ -8,6 +6,7 @@ Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview
 - download
 - reload
 - Usage:  open a file,  Press F1 and run 'View json readable'
+  Run the command again on editor to update the view.
 ## Features
 
 Show JSON file as a treeview in vscode. 
@@ -29,16 +28,6 @@ Null
 
 
 
-## Release Notes (History)
-### [1.0.0] - 2018-05-20
-- First version
-- Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
-- All of the codes are from [jsonview](https://github.com/bhollis/jsonview) excepted the in18 and error message
-
-### 1.0.1
-- changed README and project setting
-
-
-
+## Release Notes
 
 JSONViewer is open source software under the MIT licence.
