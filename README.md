@@ -4,10 +4,10 @@ Project home page [http://www.github.com/mrche/jsonviewer](http://www.github.com
 Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
 
 ## install
-Open vscode and search extensions for 'jsonviewer'  
-download
-reload
-
+- Open vscode and search extensions for 'jsonviewer'  
+- download
+- reload
+- Usage:  open a file,  Press F1 and run 'View json readable'
 ## Features
 
 Show JSON file as a treeview in vscode. 
