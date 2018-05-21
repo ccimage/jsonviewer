@@ -1,9 +1,9 @@
 {
-    "name": "ccimagejsonviewer",
+    "name": "mrchejsonviewer",
     "displayName": "jsonviewer",
     "description": "Json Tree View on VSCode",
     "version": "1.0.0",
-    "publisher": "ccimage",
+    "publisher": "mrche",
     "engines": {
         "vscode": "^1.23.0"
     },

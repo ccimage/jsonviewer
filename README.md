@@ -1,7 +1,12 @@
-# ccimagejsonviewer README
+# mrchejsonviewer README
 
-Project home page [http://www.github.com/ccimage/jsonviewer](http://www.github.com/ccimage/jsonviewer)
+Project home page [http://www.github.com/mrche/jsonviewer](http://www.github.com/mrche/jsonviewer)
 Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
+
+## install
+Open vscode and search extensions for 'jsonviewer'  
+download
+reload
 
 ## Features
 
@@ -14,7 +19,7 @@ Keyboad shotcuts
 
 ## Requirements
 
-Null
+VSCode
 
 ## Extension Settings
 
@@ -24,5 +29,13 @@ Null
 
 
 
-## Release Notes
+## Release Notes (History)
+### [1.0.0] - 2018-05-20
+- First version
+- Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
+- All of the codes are from [jsonview](https://github.com/bhollis/jsonview) excepted the in18 and error message
+
+
+
+
 JSONViewer is open source software under the MIT licence.
