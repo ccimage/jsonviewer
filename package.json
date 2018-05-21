@@ -1,7 +1,7 @@
 {
-    "name": "mrchejsonviewer",
-    "displayName": "jsonviewer",
-    "description": "Json Tree View on VSCode",
+    "name": "jsonviewer",
+    "displayName": "JSON Viewer",
+    "description": "Preview JSON as tree view on VSCode",
     "version": "1.0.0",
     "publisher": "ccimage",
     "repository":"github:ccimage/jsonviewer",
