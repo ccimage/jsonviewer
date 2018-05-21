@@ -4,7 +4,7 @@
     "description": "Json Tree View on VSCode",
     "version": "1.0.0",
     "publisher": "ccimage",
-    "repository":"https://github.com/ccimage/jsonviewer",
+    "repository":"github:ccimage/jsonviewer",
     "engines": {
         "vscode": "^1.23.0"
     },
