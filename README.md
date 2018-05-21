@@ -35,6 +35,9 @@ Null
 - Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
 - All of the codes are from [jsonview](https://github.com/bhollis/jsonview) excepted the in18 and error message
 
+### 1.0.1
+- changed README and project setting
+
 
 
 
