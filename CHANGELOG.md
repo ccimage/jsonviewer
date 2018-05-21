@@ -12,3 +12,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.0.2] - 2018-05-21
 - fix some mistake on the document
+
+## [1.0.3]
+- add project icon
