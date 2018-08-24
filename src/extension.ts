@@ -86,9 +86,9 @@ export function jsonToHTML(json: any, uri: string) {
   }
   
   /** Convert a whole JSON value / JSONP response into an HTML body, without title and scripts */
-  function jsonToHTMLBody(json: any) {
-    return `<div id="json">${valueToHTML(json, '<root>')}</div>`;
-  }
+  // function jsonToHTMLBody(json: any) {
+  //   return `<div id="json">${valueToHTML(json, '<root>')}</div>`;
+  // }
   
   
   /**
