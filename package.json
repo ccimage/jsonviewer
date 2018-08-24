@@ -10,7 +10,7 @@
         "url": "https://github.com/ccimage/jsonviewer"
     },
     "engines": {
-        "vscode": "^1.20.0"
+        "vscode": "^1.25.0"
     },
     "categories": [
         "Formatters"
