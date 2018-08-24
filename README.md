@@ -25,9 +25,10 @@ VSCode
 Null
 
 ## Known Issues
-
+Use a online javascript file from http://jsoneditoronline.org/ because don't know how to use local resource. :-(
 
 
 ## Release Notes
+Special thanks to [JSONEditor](https://github.com/josdejong/jsoneditor)
 
 JSONViewer is open source software under the MIT licence.
