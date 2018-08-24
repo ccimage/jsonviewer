@@ -15,3 +15,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.0.3]
 - add project icon
+
+## 【1.1.0] - 2018-08-24
+- update viwer to JSONEditor's Viewer
+- command menu display as 'Open in json viewer'
