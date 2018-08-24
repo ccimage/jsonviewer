@@ -69,19 +69,25 @@ export function deactivate() {
 
 /** Convert a whole JSON value / JSONP response into a formatted HTML document */
 export function jsonToHTML(json: any, uri: string) {
-    if(typeof json === 'string'){
-        try{
-            json = JSON.parse(json);
-        }
-        catch(e){
-            //console.log(e);
-            let error:Error = e;
+    // if(typeof json === 'string'){
+    //     try{
+    //         json = JSON.parse(json);
+    //     }
+    //     catch(e){
+    //         //console.log(e);
+    //         let error:Error = e;
             
-           return error.stack || "Unknown exception occured on JSON parse.";
-        }
+    //        return error.stack || "Unknown exception occured on JSON parse.";
+    //     }
         
+    // }
+    try{
+      JSON.parse(json);
     }
-    return toHTML(JSON.stringify(json), uri);
+    catch(e){
+      json = "{\"error\":\"json format not correct.\"}";
+    }
+    return toHTML(json, uri);
     //return toHTML(jsonToHTMLBody(json), uri);
   }
   
