@@ -25,7 +25,7 @@ VSCode
 Null
 
 ## Known Issues
-Use a online javascript file from http://jsoneditoronline.org/ because don't know how to use local resource. :-(
+
 
 
 ## Release Notes
