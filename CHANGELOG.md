@@ -23,5 +23,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.1.1] 
 - fix bug:  Icons not display
 
-## [1.2.0]
-- change online js resource to localfile
+## [1.2.1] - 2018-09-14
+- change  js resource link to local file
