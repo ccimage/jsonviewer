@@ -270,7 +270,7 @@ export function jsonToHTML(json: any, uri: string, rootPath:string) {
     return `<!DOCTYPE HTML><html><head><title>${htmlEncode(title)} | Viewer</title>
         <link href="${cssUri}" rel="stylesheet">
         <script nonce="${nonce}" src="${scriptUri}" ></script>
-        <style type="text/css">    body {      font: 12pt;    }    #jsoneditor {      width: 100%;    }</style>
+        <style type="text/css">    body {      font: 12pt;    }    #jsoneditor {      width: 100%;  background-color:white;  }</style>
         </head><body><div id="jsoneditor"></div>
         <script type="text/javascript"> 
         function initDoc(){  

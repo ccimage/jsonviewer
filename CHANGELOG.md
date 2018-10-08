@@ -25,3 +25,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.2.1] - 2018-09-14
 - change  js resource link to local file
+
+## [1.2.2] - 2018-10-08
+- fixed: See nothing on Dark theme
