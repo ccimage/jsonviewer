@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
         if (currentPanel) {
             // If we already have a panel, show it in the target column
             currentPanel.reveal(columnToShowIn);
-            currentPanel.webview.html = jsonToHTML(editor.document.getText(), editor.document.uri.toString(), context.extensionPath);
+            currentPanel.webview.html = jsonToHTML(editor.document.getText(), editor.document.uri.toString(), context.extensionPath, currentPanel.webview);
         } else {
 
             // Create and show a new webview
