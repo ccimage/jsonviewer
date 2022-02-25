@@ -28,3 +28,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.2.2] - 2018-10-08
 - fixed: See nothing on Dark theme
+
+## [1.2.3] - 2022-2-25
+- update: dev tools, engine to vscode 1.34 and shift tslint to eslint
