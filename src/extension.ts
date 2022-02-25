@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
             // Create and show a new webview
             currentPanel = vscode.window.createWebviewPanel(
                 'ccjsonviewer', // Identifies the type of the webview. Used internally
-                "JsonViewer", // Title of the panel displayed to the user
+                "Json Viewer", // Title of the panel displayed to the user
                 vscode.ViewColumn.One, // Editor column to show the new webview panel in.
                 { 
                     enableScripts: true,
@@ -46,8 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
                 } // Webview options. More on these later.
             );
             // And set its HTML content
-            currentPanel.webview.html = jsonToHTML(editor.document.getText(), editor.document.uri.toString(), context.extensionPath);
-            
+            currentPanel.webview.html = jsonToHTML(editor.document.getText(), editor.document.uri.toString(), context.extensionPath, currentPanel.webview);
             currentPanel.onDidDispose(() => {
                 currentPanel = undefined;
             }, null, context.subscriptions);
@@ -68,7 +67,7 @@ export function deactivate() {
  */
 
 /** Convert a whole JSON value / JSONP response into a formatted HTML document */
-export function jsonToHTML(json: any, uri: string, rootPath:string) {
+export function jsonToHTML(json: any, uri: string, rootPath:string, webView: vscode.Webview) {
     // if(typeof json === 'string'){
     //     try{
     //         json = JSON.parse(json);
@@ -87,7 +86,7 @@ export function jsonToHTML(json: any, uri: string, rootPath:string) {
     catch(e){
       json = "{\"error\":\"json format not correct.\"}";
     }
-    return toHTML(json, uri, rootPath);
+    return toHTML(json, uri, rootPath, webView);
     //return toHTML(jsonToHTMLBody(json), uri);
   }
   
@@ -256,15 +255,18 @@ export function jsonToHTML(json: any, uri: string, rootPath:string) {
   */
   
   // Wrap the HTML fragment in a full document. Used by jsonToHTML and errorPage.
-  function toHTML(content: string, title: string, extPath:string) {
+  function toHTML(content: string, title: string, extPath:string, webView: vscode.Webview) {
     // Local path to main script run in the webview
     const scriptPathOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'jsoneditor.min.js'));
     const cssPathOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'jsoneditor.min.css'));
 
     // And the uri we use to load this script in the webview
-    const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
-    //let cssHtml = getStaticCSS();
-    const cssUri = cssPathOnDisk.with({ scheme: 'vscode-resource' });
+    // const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
+    // const cssUri = cssPathOnDisk.with({ scheme: 'vscode-resource' });
+    // upgrade to new api 2022-2
+    const scriptUri = webView.asWebviewUri(scriptPathOnDisk);
+    const cssUri = webView.asWebviewUri(cssPathOnDisk);
+
     // Use a nonce to whitelist which scripts can be run
     const nonce = getNonce();
     return `<!DOCTYPE HTML><html><head><title>${htmlEncode(title)} | Viewer</title>

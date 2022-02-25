@@ -31,3 +31,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.2.3] - 2022-2-25
 - update: dev tools, engine to vscode 1.34 and shift tslint to eslint
+- update: use new api of webview
