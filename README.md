@@ -1,6 +1,8 @@
+Download as VSCode Extenstion: [JSON Viewer](https://marketplace.visualstudio.com/items?itemName=ccimage.jsonviewe)
+
 Project home page [http://www.github.com/ccimage/jsonviewer](http://www.github.com/ccimage/jsonviewer)
 
-//Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)
+//~~Based on chrome/firefox extension [jsonview](https://github.com/bhollis/jsonview)~~
 
 Change viewer to [JSONEditor](https://github.com/josdejong/jsoneditor)
 
