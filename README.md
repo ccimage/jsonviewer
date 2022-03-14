@@ -1,4 +1,4 @@
-Download as VSCode Extenstion: [JSON Viewer](https://marketplace.visualstudio.com/items?itemName=ccimage.jsonviewe)
+Download as VSCode Extenstion: [JSON Viewer](https://marketplace.visualstudio.com/items?itemName=ccimage.jsonviewer)
 
 Project home page [http://www.github.com/ccimage/jsonviewer](http://www.github.com/ccimage/jsonviewer)
 
