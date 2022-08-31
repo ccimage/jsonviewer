@@ -34,3 +34,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - update: use new api of webview
 ## [1.2.4] - 2022-8-31
 - update: upgrade version of JSONEditor to v9.9.0
+## [1.2.5] - 2022-8-31
+- update: add some other modes to the editor (open a menu)

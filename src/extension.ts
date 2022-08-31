@@ -265,32 +265,33 @@ export function jsonToHTML(json: any, uri: string, rootPath:string, webView: vsc
   // Wrap the HTML fragment in a full document. Used by jsonToHTML and errorPage.
   function toHTML(content: string, title: string, extPath:string, webView: vscode.Webview) {
     // Local path to main script run in the webview
-    const scriptPathOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'jsoneditor.min.js'));
-    const cssPathOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'jsoneditor.min.css'));
+    const extScriptOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'jsoneditor.min.js'));
+    const extCssOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'jsoneditor.min.css'));
+
+    const localCssOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'localstyle.css'));
+    const localScriptOnDisk = vscode.Uri.file(path.join(extPath, 'media', 'page.js'));
 
     // And the uri we use to load this script in the webview
     // const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
     // const cssUri = cssPathOnDisk.with({ scheme: 'vscode-resource' });
     // upgrade to new api 2022-2
-    const scriptUri = webView.asWebviewUri(scriptPathOnDisk);
-    const cssUri = webView.asWebviewUri(cssPathOnDisk);
+    const extScriptUri = webView.asWebviewUri(extScriptOnDisk);
+    const extCssUri = webView.asWebviewUri(extCssOnDisk);
+    
+    const localCssUri = webView.asWebviewUri(localCssOnDisk);
+    const localScriptUri = webView.asWebviewUri(localScriptOnDisk);
 
     // Use a nonce to whitelist which scripts can be run
     const nonce = getNonce();
     return `<!DOCTYPE HTML><html><head><title>${htmlEncode(title)} | Viewer</title>
-        <link href="${cssUri}" rel="stylesheet">
-        <script nonce="${nonce}" src="${scriptUri}" ></script>
-        <style type="text/css">    body {      font: 12pt;    }    #jsoneditor {      width: 100%;  background-color:white;  }</style>
+        <link href="${extCssUri}" rel="stylesheet">
+        <link href="${localCssUri}" rel="stylesheet">
+        <script nonce="${nonce}" src="${extScriptUri}" ></script>
         </head><body><div id="jsoneditor"></div>
-        <script type="text/javascript"> 
-        function initDoc(){  
-          var container = document.getElementById('jsoneditor');
-          var options = {    mode: 'view'  };
-          var json = ${content};
-          var editor = new JSONEditor(container, options, json);
-        }   
-        initDoc();
+        <script type="text/javascript" src="${localScriptUri}"> 
+        
         </script>
+        <script>initDoc(${content})</script>
         </body></html>`;
   }
 
