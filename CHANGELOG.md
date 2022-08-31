@@ -32,3 +32,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.2.3] - 2022-2-25
 - update: dev tools, engine to vscode 1.34 and shift tslint to eslint
 - update: use new api of webview
+## [1.2.4] - 2022-8-31
+- update: upgrade version of JSONEditor to v9.9.0

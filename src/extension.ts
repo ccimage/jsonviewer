@@ -4,6 +4,9 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 
+// Track currently webview panel
+let currentPanel: vscode.WebviewPanel | undefined = undefined;
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -11,8 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     //console.log('Congratulations, your extension "jsonviewer" is now active!');
-    // Track currently webview panel
-    let currentPanel: vscode.WebviewPanel | undefined = undefined;
+    
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
@@ -26,13 +28,13 @@ export function activate(context: vscode.ExtensionContext) {
         if (!editor) {
             return; // No open text editor
         }
-
+    
         if (currentPanel) {
             // If we already have a panel, show it in the target column
             currentPanel.reveal(columnToShowIn);
             currentPanel.webview.html = jsonToHTML(editor.document.getText(), editor.document.uri.toString(), context.extensionPath, currentPanel.webview);
         } else {
-
+    
             // Create and show a new webview
             currentPanel = vscode.window.createWebviewPanel(
                 'ccjsonviewer', // Identifies the type of the webview. Used internally
@@ -59,6 +61,11 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+  if (currentPanel) {
+    currentPanel.dispose();
+  }
+  
+  currentPanel = undefined;
 }
 
 /**
@@ -90,6 +97,7 @@ export function jsonToHTML(json: any, uri: string, rootPath:string, webView: vsc
     //return toHTML(jsonToHTMLBody(json), uri);
   }
   
+
   /** Convert a whole JSON value / JSONP response into an HTML body, without title and scripts */
   // function jsonToHTMLBody(json: any) {
   //   return `<div id="json">${valueToHTML(json, '<root>')}</div>`;
