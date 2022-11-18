@@ -3,6 +3,10 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as path from 'path';
+import {
+    parse as jsonParse,
+    stringify as jsonStringify
+} from 'comment-json';
 
 // Track currently webview panel
 let currentPanel: vscode.WebviewPanel | undefined = undefined;
@@ -88,7 +92,7 @@ export function jsonToHTML(json: any, uri: string, rootPath:string, webView: vsc
         
     // }
     try{
-      JSON.parse(json);
+      jsonParse(json, undefined, true);
     }
     catch(e){
       json = "{\"error\":\"json format not correct.\"}";
@@ -121,7 +125,7 @@ export function jsonToHTML(json: any, uri: string, rootPath:string, webView: vsc
    */
   function jsString(s: string): string {
     // Slice off the surrounding quotes
-    s = JSON.stringify(s).slice(1, -1);
+    s = jsonStringify(s).slice(1, -1);
     return htmlEncode(s);
   }
   
@@ -197,7 +201,7 @@ export function jsonToHTML(json: any, uri: string, rootPath:string, webView: vsc
     let output = '';
     for (const prop in json) {
       let subPath = '';
-      let escapedProp = JSON.stringify(prop).slice(1, -1);
+      let escapedProp = jsonStringify(prop).slice(1, -1);
       const bare = isBareProp(prop);
       if (bare) {
         subPath = `${path}.${escapedProp}`;
