@@ -2,7 +2,7 @@
     "name": "jsonviewer",
     "displayName": "JSON Viewer",
     "description": "Preview JSON as tree view on VSCode",
-    "version": "1.3.0",
+    "version": "1.3.2",
     "publisher": "ccimage",
     "icon": "projecticon.png",
     "repository": {
@@ -34,6 +34,9 @@
         "lint": "eslint . --ext .ts,.tsx",
         "test": "node ./out/test/runTest.js"
     },
+    "dependencies": {
+        "comment-json": "^4.2.3"
+    },
     "devDependencies": {
         "@types/glob": "^7.2.0",
         "@types/mocha": "^9.1.0",
@@ -41,7 +44,6 @@
         "@types/vscode": "^1.34.0",
         "@typescript-eslint/parser": "^4.22.1",
         "@vscode/test-electron": "^2.1.2",
-        "comment-json": "^4.2.3",
         "eslint": "^7.23.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-import": "^2.22.1",

@@ -39,3 +39,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.3.0] - 2023-1-5
 - new: open json with comments by Alex Giddings
+
+## [1.3.2] - 2023-1-5
+- fix: comment-json module not found
