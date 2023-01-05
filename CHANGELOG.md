@@ -36,3 +36,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - update: upgrade version of JSONEditor to v9.9.0
 ## [1.2.5] - 2022-8-31
 - update: add some other modes to the editor (open a menu)
+
+## [1.3.0] - 2023-1-5
+- new: open json with comments by Alex Giddings

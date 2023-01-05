@@ -34,3 +34,6 @@ Null
 Special thanks to [JSONEditor](https://github.com/josdejong/jsoneditor)
 
 JSONViewer is open source software under the MIT licence.
+
+## Thanks
+Alex Giddings add feature:  open json with comments
