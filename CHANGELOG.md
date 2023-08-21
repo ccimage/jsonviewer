@@ -5,6 +5,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.3.3]
 - fix: [#7](https://github.com/ccimage/jsonviewer/issues/7) Json viewer will break (cannot be rendered properly) if there is a text </script> in any json strings
+
 ## [1.3.2] - 2023-1-5
 - fix: comment-json module not found
 

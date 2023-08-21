@@ -27,6 +27,7 @@ VSCode
 Null
 
 ## Known Issues
+https://github.com/ccimage/jsonviewer/issues
 
 
 
