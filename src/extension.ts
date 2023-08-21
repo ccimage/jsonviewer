@@ -101,7 +101,8 @@ export function jsonToHTML(json: any, uri: string, rootPath: string, webView: vs
     } catch (e) {
         json = '{"error":"json format not correct."}';
     }
-    return toHTML(json.replace(/\//g, "\\/"), uri, rootPath, webView);
+    // 替换转义符/和'
+    return toHTML(json.replace(/\//g, "\\/").replace(/\'/g, '\\\'').replace(/\\\"/g, '\\\\"'), uri, rootPath, webView);
     //return toHTML(jsonToHTMLBody(json), uri);
 }
 
@@ -292,6 +293,7 @@ function toHTML(content: string, title: string, extPath: string, webView: vscode
 
     // Use a nonce to whitelist which scripts can be run
     const nonce = getNonce();
+    console.log("content = ", `'${content}'`);
     return `<!DOCTYPE HTML><html><head><title>${htmlEncode(title)} | Viewer</title>
         <link href="${extCssUri}" rel="stylesheet">
         <link href="${localCssUri}" rel="stylesheet">
@@ -300,7 +302,7 @@ function toHTML(content: string, title: string, extPath: string, webView: vscode
         <script type="text/javascript" src="${localScriptUri}">
 
         </script>
-        <script>initDoc(${content})</script>
+        <script>initDoc('${content.replace(/\n/g, '')}')</script>
         </body></html>`;
 }
 

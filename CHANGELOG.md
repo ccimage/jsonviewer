@@ -3,6 +3,10 @@ All notable changes to the "jsonviewer" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.4.0]
+- fix: [#8](https://github.com/ccimage/jsonviewer/issues/8) uint64 numbers are displayed incorrectly
+- replace json editor with a version forked by myself. to make long number correct (use bigint) 
+
 ## [1.3.3]
 - fix: [#7](https://github.com/ccimage/jsonviewer/issues/7) Json viewer will break (cannot be rendered properly) if there is a text </script> in any json strings
 

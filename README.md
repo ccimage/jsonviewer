@@ -27,7 +27,9 @@ VSCode
 Null
 
 ## Known Issues
-https://github.com/ccimage/jsonviewer/issues
+-  if string value with the letter ", the escape character will always shows (as \\")
+- others:
+> https://github.com/ccimage/jsonviewer/issues
 
 
 
