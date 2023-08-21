@@ -101,7 +101,7 @@ export function jsonToHTML(json: any, uri: string, rootPath: string, webView: vs
     } catch (e) {
         json = '{"error":"json format not correct."}';
     }
-    return toHTML(json, uri, rootPath, webView);
+    return toHTML(json.replace(/\//g, "\\/"), uri, rootPath, webView);
     //return toHTML(jsonToHTMLBody(json), uri);
 }
 
