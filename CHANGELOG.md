@@ -3,6 +3,9 @@ All notable changes to the "jsonviewer" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.5.0] - 2023-9-26
+- fix/improve: retain context when hidden tabs.
+
 ## [1.4.0] - 2023-8-21
 - fix: [#8](https://github.com/ccimage/jsonviewer/issues/8) uint64 numbers are displayed incorrectly
 - replace json editor with a version forked by myself. to make long number correct (use bigint) 

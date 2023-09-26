@@ -46,6 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
                 {
                     enableScripts: true,
                     localResourceRoots: [vscode.Uri.file(path.join(context.extensionPath, "media"))],
+                    retainContextWhenHidden: true
                 } // Webview options. More on these later.
             );
             // And set its HTML content
