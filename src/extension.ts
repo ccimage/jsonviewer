@@ -66,6 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
+
     context.subscriptions.push(disposable);
 }
 
@@ -84,7 +85,7 @@ export function deactivate() {
  */
 
 /** Convert a whole JSON value / JSONP response into a formatted HTML document */
-export function jsonToHTML(json: any, uri: string, rootPath: string, webView: vscode.Webview) {
+export function jsonToHTML(jsonStr: string, uri: string, rootPath: string, webView: vscode.Webview) {
     // if(typeof json === 'string'){
     //     try{
     //         json = JSON.parse(json);
@@ -98,12 +99,11 @@ export function jsonToHTML(json: any, uri: string, rootPath: string, webView: vs
 
     // }
     try {
-        jsonParse(json, undefined, true);
+        jsonParse(jsonStr, undefined, true);
     } catch (e) {
-        json = '{"error":"json format not correct."}';
+        jsonStr = '{"error":"json format not correct."}';
     }
-    // 替换转义符/和'
-    return toHTML(json.replace(/\//g, "\\/").replace(/\'/g, '\\\'').replace(/\\\"/g, '\\\\"'), uri, rootPath, webView);
+    return toHTML(jsonStr, uri, rootPath, webView);
     //return toHTML(jsonToHTMLBody(json), uri);
 }
 
@@ -294,7 +294,7 @@ function toHTML(content: string, title: string, extPath: string, webView: vscode
 
     // Use a nonce to whitelist which scripts can be run
     const nonce = getNonce();
-    console.log("content = ", `'${content}'`);
+    console.log("content = ", content);
     return `<!DOCTYPE HTML><html><head><title>${htmlEncode(title)} | Viewer</title>
         <link href="${extCssUri}" rel="stylesheet">
         <link href="${localCssUri}" rel="stylesheet">
@@ -303,7 +303,7 @@ function toHTML(content: string, title: string, extPath: string, webView: vscode
         <script type="text/javascript" src="${localScriptUri}">
 
         </script>
-        <script>initDoc('${content.replace(/\n/g, '')}')</script>
+        <script>initDoc('${encodeURIComponent(content)}')</script>
         </body></html>`;
 }
 

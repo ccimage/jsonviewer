@@ -7,6 +7,6 @@ function initDoc(text){
                             container.style.height = window.innerHeight + "px";
                           }
                     };
-    var editor = new JSONEditor(container, options, text);
+    var editor = new JSONEditor(container, options, decodeURIComponent(text));
     container.style.height = window.innerHeight + "px";
 }   

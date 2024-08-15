@@ -3,6 +3,9 @@ All notable changes to the "jsonviewer" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.5.1] - 2024-8-15
+- fix/improve: [#11](https://github.com/ccimage/jsonviewer/issues/11) "parseError": "Invalid character '\n' at position "
+
 ## [1.5.0] - 2023-9-26
 - fix/improve: retain context when hidden tabs.
 
