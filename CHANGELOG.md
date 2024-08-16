@@ -3,6 +3,9 @@ All notable changes to the "jsonviewer" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.5.2] - 2024-8-16
+- fix/improve: not render when have ‘ in json key or value
+
 ## [1.5.1] - 2024-8-15
 - fix/improve: [#11](https://github.com/ccimage/jsonviewer/issues/11) "parseError": "Invalid character '\n' at position "
 

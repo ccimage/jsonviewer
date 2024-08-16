@@ -99,6 +99,7 @@ export function jsonToHTML(jsonStr: string, uri: string, rootPath: string, webVi
 
     // }
     try {
+        // jsonStr = jsonStr.replace(/\n/g, "");
         jsonParse(jsonStr, undefined, true);
     } catch (e) {
         jsonStr = '{"error":"json format not correct."}';
@@ -294,7 +295,7 @@ function toHTML(content: string, title: string, extPath: string, webView: vscode
 
     // Use a nonce to whitelist which scripts can be run
     const nonce = getNonce();
-    console.log("content = ", content);
+    // console.log("content = ", content);
     return `<!DOCTYPE HTML><html><head><title>${htmlEncode(title)} | Viewer</title>
         <link href="${extCssUri}" rel="stylesheet">
         <link href="${localCssUri}" rel="stylesheet">
@@ -303,7 +304,7 @@ function toHTML(content: string, title: string, extPath: string, webView: vscode
         <script type="text/javascript" src="${localScriptUri}">
 
         </script>
-        <script>initDoc('${encodeURIComponent(content)}')</script>
+        <script>initDoc(\`${encodeURIComponent(content)}\`)</script>
         </body></html>`;
 }
 
